@@ -1,0 +1,1039 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.sql.Row\nimport org.apache.spark.sql.types.{StructField, IntegerType, StringType, StructType,FloatType, DoubleType}",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T00:05:13+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.Row\nimport org.apache.spark.sql.types.{StructField, IntegerType, StringType, StructType, FloatType, DoubleType}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646057464952_1602600290",
+      "id": "paragraph_1646057464952_1602600290",
+      "dateCreated": "2022-02-28T14:11:04+0000",
+      "dateStarted": "2022-03-01T00:05:13+0000",
+      "dateFinished": "2022-03-01T00:05:13+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:5992"
+    },
+    {
+      "text": "\n\nval data = Seq(Row(\"Stock\",\t\"Plus500\",\t0.05938, \t\"Amazon\", \"01/11/2021\" , 3368.0000,\t4000.0),\nRow(\"Stock\",\t\"Plus500\",\t0.06, \t\"Facebook\", \"01/11/2021\" , 160.0,\t200.0),\nRow(\"Stock\",\t\"Plus500\",\t0.06, \t\"Facebook\", \"01/11/2021\" , 160.0,\t200.0),\nRow(\"Stock\",\t\"eToro\",\t1.5, \t\"Facebook\", \"12/11/2021\" , 180.8,\t250.5),\nRow(\"Stock\",\t\"Plus500\",\t0.065, \t\"LinkedIn\", \"15/11/2021\" , 80.0,\t140.0),\nRow(\"Stock\",\t\"eToro\",\t1.3, \t\"Pfeizer\", \"01/12/2021\" , 34.0,\t85.5),\nRow(\"Crypto\",\t\"Plus500\",\t0.01, \t\"Bit Coin\", \"01/01/2022\" , 45000.0,\t48000.0),\nRow(\"Crypto\",\t\"CoinBase\",\t0.06, \t\"Ethereum\", \"01/11/2021\" , 3800.4,\t3500.0),\nRow(\"Crypto\",\t\"Plus500\",\t0.08, \t\"Sand\", \"29/11/2021\" , 5.4,\t8.9))\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T00:39:27+0000",
+      "progress": 75,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Asset": "string",
+                      "Platform": "string",
+                      "Unit": "string",
+                      "Trade Name": "string",
+                      "Buy Date": "string",
+                      "Buy Price": "string",
+                      "Sell Price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdata\u001b[0m: \u001b[1m\u001b[32mSeq[org.apache.spark.sql.Row]\u001b[0m = List([Stock,Plus500,0.05938,Amazon,01/11/2021,3368.0,4000.0], [Stock,Plus500,0.06,Facebook,01/11/2021,160.0,200.0], [Stock,Plus500,0.06,Facebook,01/11/2021,160.0,200.0], [Stock,eToro,1.5,Facebook,12/11/2021,180.8,250.5], [Stock,Plus500,0.065,LinkedIn,15/11/2021,80.0,140.0], [Stock,eToro,1.3,Pfeizer,01/12/2021,34.0,85.5], [Crypto,Plus500,0.01,Bit Coin,01/01/2022,45000.0,48000.0], [Crypto,CoinBase,0.06,Ethereum,01/11/2021,3800.4,3500.0], [Crypto,Plus500,0.08,Sand,29/11/2021,5.4,8.9])\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646057508705_366328726",
+      "id": "paragraph_1646057508705_366328726",
+      "dateCreated": "2022-02-28T14:11:48+0000",
+      "dateStarted": "2022-03-01T00:39:27+0000",
+      "dateFinished": "2022-03-01T00:39:27+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5993"
+    },
+    {
+      "text": "\n\n\nval customSchema = List(\n    StructField(\"Asset\",StringType, true), \n    StructField(\"Platform\", StringType, true), \n    StructField(\"Unit\", DoubleType, true), \n    StructField(\"Trade Name\", StringType ,true), \n    StructField(\"Buy Date\", StringType, true) ,\n    StructField(\"Buy Price\", DoubleType, true), \n    StructField(\"Sell Price\", DoubleType, true))\n\nval customDataFrame = spark.createDataFrame(spark.sparkContext.parallelize(data),StructType(customSchema))\n\n\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T00:43:03+0000",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Asset": "string",
+                      "Platform": "string",
+                      "Unit": "string",
+                      "Trade Name": "string",
+                      "Buy Date": "string",
+                      "Buy Price": "string",
+                      "Sell Price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcustomSchema\u001b[0m: \u001b[1m\u001b[32mList[org.apache.spark.sql.types.StructField]\u001b[0m = List(StructField(Asset,StringType,true), StructField(Platform,StringType,true), StructField(Unit,DoubleType,true), StructField(Trade Name,StringType,true), StructField(Buy Date,StringType,true), StructField(Buy Price,DoubleType,true), StructField(Sell Price,DoubleType,true))\n\u001b[1m\u001b[34mcustomDataFrame\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Asset: string, Platform: string ... 5 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646060303699_1827565131",
+      "id": "paragraph_1646060303699_1827565131",
+      "dateCreated": "2022-02-28T14:58:23+0000",
+      "dateStarted": "2022-03-01T00:43:03+0000",
+      "dateFinished": "2022-03-01T00:43:03+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5994"
+    },
+    {
+      "text": "z.show(customDataFrame)",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T00:43:07+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Asset": "string",
+                      "Platform": "string",
+                      "Unit": "string",
+                      "Trade Name": "string",
+                      "Buy Date": "string",
+                      "Buy Price": "string",
+                      "Sell Price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Asset\tPlatform\tUnit\tTrade Name\tBuy Date\tBuy Price\tSell Price\nStock\tPlus500\t0.05938\tAmazon\t01/11/2021\t3368.0\t4000.0\nStock\tPlus500\t0.06\tFacebook\t01/11/2021\t160.0\t200.0\nStock\tPlus500\t0.06\tFacebook\t01/11/2021\t160.0\t200.0\nStock\teToro\t1.5\tFacebook\t12/11/2021\t180.8\t250.5\nStock\tPlus500\t0.065\tLinkedIn\t15/11/2021\t80.0\t140.0\nStock\teToro\t1.3\tPfeizer\t01/12/2021\t34.0\t85.5\nCrypto\tPlus500\t0.01\tBit Coin\t01/01/2022\t45000.0\t48000.0\nCrypto\tCoinBase\t0.06\tEthereum\t01/11/2021\t3800.4\t3500.0\nCrypto\tPlus500\t0.08\tSand\t29/11/2021\t5.4\t8.9\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=36",
+              "$$hashKey": "object:6730"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=37",
+              "$$hashKey": "object:6731"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=38",
+              "$$hashKey": "object:6732"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646095172714_1993783373",
+      "id": "paragraph_1646095172714_1993783373",
+      "dateCreated": "2022-03-01T00:39:32+0000",
+      "dateStarted": "2022-03-01T00:43:06+0000",
+      "dateFinished": "2022-03-01T00:43:06+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5995"
+    },
+    {
+      "text": "\n\nval statsPerPlatformAndTrade = \ncustomDataFrame.groupBy(\"Platform\",\"STrade Name\")\n.pivot(\"Asset\", List(\"Stock\", \"Crypto\"))\n.agg(sum(\"Unit\").as(\"TotalUnit\"), \n     sum(\"Buy Price\").as(\"TotalBuyPrice\"), \n     sum(\"Sell Price\").as(\"TotalSellPrice\"))\n     .na.fill(0)",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T05:54:49+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mstatsPerPlatformAndTrade\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Platform: string, Trade Name: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646095386418_306731203",
+      "id": "paragraph_1646095386418_306731203",
+      "dateCreated": "2022-03-01T00:43:06+0000",
+      "dateStarted": "2022-03-01T00:53:30+0000",
+      "dateFinished": "2022-03-01T00:53:31+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5996"
+    },
+    {
+      "text": "z.show(statsPerPlatformAndTrade)",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T00:52:01+0000",
+      "progress": 24,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Platform": "string",
+                      "Trade Name": "string",
+                      "Stock_TotalUnit": "string",
+                      "Stock_TotalBuyPrice": "string",
+                      "Stock_TotalSellPrice": "string",
+                      "Crypto_TotalUnit": "string",
+                      "Crypto_TotalBuyPrice": "string",
+                      "Crypto_TotalSellPrice": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Platform\tTrade Name\tStock_TotalUnit\tStock_TotalBuyPrice\tStock_TotalSellPrice\tCrypto_TotalUnit\tCrypto_TotalBuyPrice\tCrypto_TotalSellPrice\nPlus500\tLinkedIn\t0.065\t80.0\t140.0\t0.0\t0.0\t0.0\nPlus500\tBit Coin\t0.0\t0.0\t0.0\t0.01\t45000.0\t48000.0\neToro\tPfeizer\t1.3\t34.0\t85.5\t0.0\t0.0\t0.0\nPlus500\tAmazon\t0.05938\t3368.0\t4000.0\t0.0\t0.0\t0.0\neToro\tFacebook\t1.5\t180.8\t250.5\t0.0\t0.0\t0.0\nPlus500\tFacebook\t0.12\t320.0\t400.0\t0.0\t0.0\t0.0\nPlus500\tSand\t0.0\t0.0\t0.0\t0.08\t5.4\t8.9\nCoinBase\tEthereum\t0.0\t0.0\t0.0\t0.06\t3800.4\t3500.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=39",
+              "$$hashKey": "object:6890"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=40",
+              "$$hashKey": "object:6891"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=41",
+              "$$hashKey": "object:6892"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=42",
+              "$$hashKey": "object:6893"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=43",
+              "$$hashKey": "object:6894"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646095770835_67666929",
+      "id": "paragraph_1646095770835_67666929",
+      "dateCreated": "2022-03-01T00:49:30+0000",
+      "dateStarted": "2022-03-01T00:51:56+0000",
+      "dateFinished": "2022-03-01T00:52:01+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5997"
+    },
+    {
+      "text": "statsPerPlatformAndTrade.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T00:59:40+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Platform: string (nullable = true)\n |-- Trade Name: string (nullable = true)\n |-- Stock_TotalUnit: double (nullable = false)\n |-- Stock_TotalBuyPrice: double (nullable = false)\n |-- Stock_TotalSellPrice: double (nullable = false)\n |-- Crypto_TotalUnit: double (nullable = false)\n |-- Crypto_TotalBuyPrice: double (nullable = false)\n |-- Crypto_TotalSellPrice: double (nullable = false)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646095916204_866295847",
+      "id": "paragraph_1646095916204_866295847",
+      "dateCreated": "2022-03-01T00:51:56+0000",
+      "dateStarted": "2022-03-01T00:59:40+0000",
+      "dateFinished": "2022-03-01T00:59:40+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5998"
+    },
+    {
+      "text": "\n\nval perPlatformStats = statsPerPlatformAndTrade.groupBy(\"Platform\").agg(\n    sum(\"Stock_TotalUnit\").as(\"Stock_TotalUnit_PerPlatform\"),\n    sum(\"Stock_TotalBuyPrice\").as(\"Stock_TotalBuyPrice_PerPlatform\"),\n    sum(\"Stock_TotalSellPrice\").as(\"Stock_TotalSellPrice_PerPlatform\"),\n    sum(\"Crypto_TotalUnit\").as(\"Crypto_TotalUnit_PerPlatform\"),\n    sum(\"Crypto_TotalBuyPrice\").as(\"Crypto_TotalBuyPrice_PerPlatform\"),\n    sum(\"Crypto_TotalSellPrice\").as(\"Stock_TotalSellPrice_PerPlatform\")\n    )\n    \nz.show(c)    ",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:03:23+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Platform": "string",
+                      "Stock_TotalUnit_PerPlatform": "string",
+                      "Stock_TotalBuyPrice_PerPlatform": "string",
+                      "Stock_TotalSellPrice_PerPlatform": "string",
+                      "Crypto_TotalUnit_PerPlatform": "string",
+                      "Crypto_TotalBuyPrice_PerPlatform": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Platform\tStock_TotalUnit_PerPlatform\tStock_TotalBuyPrice_PerPlatform\tStock_TotalSellPrice_PerPlatform\tCrypto_TotalUnit_PerPlatform\tCrypto_TotalBuyPrice_PerPlatform\tStock_TotalSellPrice_PerPlatform\nPlus500\t0.24438\t3768.0\t4540.0\t0.09\t45005.4\t48008.9\nCoinBase\t0.0\t0.0\t0.0\t0.06\t3800.4\t3500.0\neToro\t2.8\t214.8\t336.0\t0.0\t0.0\t0.0\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mperPlatformStats\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Platform: string, Stock_TotalUnit_PerPlatform: double ... 5 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=44",
+              "$$hashKey": "object:7070"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=45",
+              "$$hashKey": "object:7071"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=46",
+              "$$hashKey": "object:7072"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=47",
+              "$$hashKey": "object:7073"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=48",
+              "$$hashKey": "object:7074"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646096380741_672168208",
+      "id": "paragraph_1646096380741_672168208",
+      "dateCreated": "2022-03-01T00:59:40+0000",
+      "dateStarted": "2022-03-01T06:01:50+0000",
+      "dateFinished": "2022-03-01T06:01:53+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5999"
+    },
+    {
+      "text": "\n\nval perPlatformStats = statsPerPlatformAndTrade.groupBy(\"Platform\").agg(\n    sum(\"Stock_TotalUnit\").as(\"Stock_TotalUnit_PerPlatform\"),\n    sum(\"Stock_TotalBuyPrice\").as(\"Stock_TotalBuyPrice_PerPlatform\"),\n    sum(\"Stock_TotalSellPrice\").as(\"Stock_TotalSellPrice_PerPlatform\"),\n    sum(\"Crypto_TotalUnit\").as(\"Crypto_TotalUnit_PerPlatform\"),\n    sum(\"Crypto_TotalBuyPrice\").as(\"Crypto_TotalBuyPrice_PerPlatform\"),\n    sum(\"Crypto_TotalSellPrice\").as(\"Stock_TotalSellPrice_PerPlatform\"),\n    //\n    max(\"Stock_TotalUnit\").as(\"Stock_MaxUnit_PerPlatform\"),\n    max(\"Stock_TotalBuyPrice\").as(\"Stock_MaxBuyPrice_PerPlatform\"),\n    max(\"Stock_TotalSellPrice\").as(\"Stock_MaxSellPrice_PerPlatform\"),\n    max(\"Crypto_TotalUnit\").as(\"Crypto_MaxUnit_PerPlatform\"),\n    max(\"Crypto_TotalBuyPrice\").as(\"Crypto_MaxBuyPrice_PerPlatform\"),\n    max(\"Crypto_TotalSellPrice\").as(\"Stock_MaxSellPrice_PerPlatform\"),\n    //\n    min(\"Stock_TotalUnit\").as(\"Stock_MinUnit_PerPlatform\"),\n    min(\"Stock_TotalBuyPrice\").as(\"Stock_MinBuyPrice_PerPlatform\"),\n    min(\"Stock_TotalSellPrice\").as(\"Stock_MinSellPrice_PerPlatform\"),\n    min(\"Crypto_TotalUnit\").as(\"Crypto_MinUnit_PerPlatform\"),\n    min(\"Crypto_TotalBuyPrice\").as(\"Crypto_MinBuyPrice_PerPlatform\"),\n    min(\"Crypto_TotalSellPrice\").as(\"Stock_MinSellPrice_PerPlatform\"),\n    \n    //\n    \n    avg(\"Stock_TotalUnit\").as(\"Stock_AvgUnit_PerPlatform\"),\n    avg(\"Stock_TotalBuyPrice\").as(\"Stock_AvgBuyPrice_PerPlatform\"),\n    avg(\"Stock_TotalSellPrice\").as(\"Stock_AvgSellPrice_PerPlatform\"),\n    avg(\"Crypto_TotalUnit\").as(\"Crypto_AvgUnit_PerPlatform\"),\n    avg(\"Crypto_TotalBuyPrice\").as(\"Crypto_AvgBuyPrice_PerPlatform\"),\n    avg(\"Crypto_TotalSellPrice\").as(\"Stock_AvgSellPrice_PerPlatform\")\n    )\n    \n",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:14:00+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mperPlatformStats\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Platform: string, Stock_TotalUnit_PerPlatform: double ... 23 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646115067493_1277892617",
+      "id": "paragraph_1646115067493_1277892617",
+      "dateCreated": "2022-03-01T06:11:07+0000",
+      "dateStarted": "2022-03-01T06:14:00+0000",
+      "dateFinished": "2022-03-01T06:14:00+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6000"
+    },
+    {
+      "text": "z.show(perPlatformStats)",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:04:04+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Platform": "string",
+                      "Stock_TotalUnit_PerPlatform": "string",
+                      "Stock_TotalBuyPrice_PerPlatform": "string",
+                      "Stock_TotalSellPrice_PerPlatform": "string",
+                      "Crypto_TotalUnit_PerPlatform": "string",
+                      "Crypto_TotalBuyPrice_PerPlatform": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Platform\tStock_TotalUnit_PerPlatform\tStock_TotalBuyPrice_PerPlatform\tStock_TotalSellPrice_PerPlatform\tCrypto_TotalUnit_PerPlatform\tCrypto_TotalBuyPrice_PerPlatform\tStock_TotalSellPrice_PerPlatform\nPlus500\t0.24438\t3768.0\t4540.0\t0.09\t45005.4\t48008.9\nCoinBase\t0.0\t0.0\t0.0\t0.06\t3800.4\t3500.0\neToro\t2.8\t214.8\t336.0\t0.0\t0.0\t0.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=49",
+              "$$hashKey": "object:7240"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=50",
+              "$$hashKey": "object:7241"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=51",
+              "$$hashKey": "object:7242"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=52",
+              "$$hashKey": "object:7243"
+            },
+            {
+              "jobUrl": "http://3276bae50ba4:4040/jobs/job?id=53",
+              "$$hashKey": "object:7244"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646114489797_1482347918",
+      "id": "paragraph_1646114489797_1482347918",
+      "dateCreated": "2022-03-01T06:01:29+0000",
+      "dateStarted": "2022-03-01T06:04:02+0000",
+      "dateFinished": "2022-03-01T06:04:04+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6001"
+    },
+    {
+      "text": "\n\nval columnNames = List(\"Stock_TotalUnit\", \"Stock_TotalBuyPrice\", \"Stock_TotalSellPrice\", \n\"Crypto_TotalUnit\", \"Crypto_TotalBuyPrice\", \"Crypto_TotalSellPrice\")",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:26:15+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcolumnNames\u001b[0m: \u001b[1m\u001b[32mList[String]\u001b[0m = List(Stock_TotalUnit, Stock_TotalBuyPrice, Stock_TotalSellPrice, Crypto_TotalUnit, Crypto_TotalBuyPrice, Crypto_TotalSellPrice)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646114614273_1406322784",
+      "id": "paragraph_1646114614273_1406322784",
+      "dateCreated": "2022-03-01T06:03:34+0000",
+      "dateStarted": "2022-03-01T06:26:15+0000",
+      "dateFinished": "2022-03-01T06:26:16+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6002"
+    },
+    {
+      "text": "\n\nval sumFunc = columnNames.map(colName => sum(colName).as(colName + \"_Sum_PerPlatform\"))\nval minFunc = columnNames.map(colName => min(colName).as(\"_Min_PerPlatform\"))\nval maxFunc = columnNames.map(colName => max(colName).as(\"_Max_PerPlatform\"))\nval avgFunc = columnNames.map(colName => avg(colName).as(\"_Avg_PerPlatform\"))",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:28:47+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34msumFunc\u001b[0m: \u001b[1m\u001b[32mList[org.apache.spark.sql.Column]\u001b[0m = List(sum(Stock_TotalUnit) AS `Stock_TotalUnit_Sum_PerPlatform`, sum(Stock_TotalBuyPrice) AS `Stock_TotalBuyPrice_Sum_PerPlatform`, sum(Stock_TotalSellPrice) AS `Stock_TotalSellPrice_Sum_PerPlatform`, sum(Crypto_TotalUnit) AS `Crypto_TotalUnit_Sum_PerPlatform`, sum(Crypto_TotalBuyPrice) AS `Crypto_TotalBuyPrice_Sum_PerPlatform`, sum(Crypto_TotalSellPrice) AS `Crypto_TotalSellPrice_Sum_PerPlatform`)\n\u001b[1m\u001b[34mminFunc\u001b[0m: \u001b[1m\u001b[32mList[org.apache.spark.sql.Column]\u001b[0m = List(min(Stock_TotalUnit) AS `_Min_PerPlatform`, min(Stock_TotalBuyPrice) AS `_Min_PerPlatform`, min(Stock_TotalSellPrice) AS `_Min_PerPlatform`, min(Crypto_TotalUnit) AS `_Min_PerPlatform`, min(Crypto_TotalBuyPrice) AS `_Min_PerPlatform`, min(Crypto_Tot..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646114799725_2020928057",
+      "id": "paragraph_1646114799725_2020928057",
+      "dateCreated": "2022-03-01T06:06:39+0000",
+      "dateStarted": "2022-03-01T06:28:47+0000",
+      "dateFinished": "2022-03-01T06:28:47+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6003"
+    },
+    {
+      "text": "val aggExpression = sumFunc ++ minFunc ++ maxFunc ++ avgFunc",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:29:14+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34maggExpression\u001b[0m: \u001b[1m\u001b[32mList[org.apache.spark.sql.Column]\u001b[0m = List(sum(Stock_TotalUnit) AS `Stock_TotalUnit_Sum_PerPlatform`, sum(Stock_TotalBuyPrice) AS `Stock_TotalBuyPrice_Sum_PerPlatform`, sum(Stock_TotalSellPrice) AS `Stock_TotalSellPrice_Sum_PerPlatform`, sum(Crypto_TotalUnit) AS `Crypto_TotalUnit_Sum_PerPlatform`, sum(Crypto_TotalBuyPrice) AS `Crypto_TotalBuyPrice_Sum_PerPlatform`, sum(Crypto_TotalSellPrice) AS `Crypto_TotalSellPrice_Sum_PerPlatform`, min(Stock_TotalUnit) AS `_Min_PerPlatform`, min(Stock_TotalBuyPrice) AS `_Min_PerPlatform`, min(Stock_TotalSellPrice) AS `_Min_PerPlatform`, min(Crypto_TotalUnit) AS `_Min_PerPlatform`, min(Crypto_TotalBuyPrice) AS `_Min_PerPlatform`, min(Crypto_TotalSellPrice) AS `_Min_PerPlatform`, max(Stock_TotalUnit) AS `_Max_PerP..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646115748599_199617553",
+      "id": "paragraph_1646115748599_199617553",
+      "dateCreated": "2022-03-01T06:22:28+0000",
+      "dateStarted": "2022-03-01T06:29:14+0000",
+      "dateFinished": "2022-03-01T06:29:14+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6004"
+    },
+    {
+      "text": "statsPerPlatformAndTrade.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:24:48+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Platform: string (nullable = true)\n |-- Trade Name: string (nullable = true)\n |-- Stock_TotalUnit: double (nullable = false)\n |-- Stock_TotalBuyPrice: double (nullable = false)\n |-- Stock_TotalSellPrice: double (nullable = false)\n |-- Crypto_TotalUnit: double (nullable = false)\n |-- Crypto_TotalBuyPrice: double (nullable = false)\n |-- Crypto_TotalSellPrice: double (nullable = false)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646115884427_1137075335",
+      "id": "paragraph_1646115884427_1137075335",
+      "dateCreated": "2022-03-01T06:24:44+0000",
+      "dateStarted": "2022-03-01T06:24:48+0000",
+      "dateFinished": "2022-03-01T06:24:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6005"
+    },
+    {
+      "text": "val perPlatformStats = statsPerPlatformAndTrade.groupBy(\"Platform\").agg(\n    aggExpression.head, aggExpression.tail: _*\n    \n    )",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:29:48+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mperPlatformStats\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Platform: string, Stock_TotalUnit_Sum_PerPlatform: double ... 23 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646115539036_249968333",
+      "id": "paragraph_1646115539036_249968333",
+      "dateCreated": "2022-03-01T06:18:59+0000",
+      "dateStarted": "2022-03-01T06:29:48+0000",
+      "dateFinished": "2022-03-01T06:29:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6006"
+    },
+    {
+      "text": "perPlatformStats.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-01T06:29:59+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Platform: string (nullable = true)\n |-- Stock_TotalUnit_Sum_PerPlatform: double (nullable = true)\n |-- Stock_TotalBuyPrice_Sum_PerPlatform: double (nullable = true)\n |-- Stock_TotalSellPrice_Sum_PerPlatform: double (nullable = true)\n |-- Crypto_TotalUnit_Sum_PerPlatform: double (nullable = true)\n |-- Crypto_TotalBuyPrice_Sum_PerPlatform: double (nullable = true)\n |-- Crypto_TotalSellPrice_Sum_PerPlatform: double (nullable = true)\n |-- _Min_PerPlatform: double (nullable = true)\n |-- _Min_PerPlatform: double (nullable = true)\n |-- _Min_PerPlatform: double (nullable = true)\n |-- _Min_PerPlatform: double (nullable = true)\n |-- _Min_PerPlatform: double (nullable = true)\n |-- _Min_PerPlatform: double (nullable = true)\n |-- _Max_PerPlatform: double (nullable = true)\n |-- _Max_PerPlatform: double (nullable = true)\n |-- _Max_PerPlatform: double (nullable = true)\n |-- _Max_PerPlatform: double (nullable = true)\n |-- _Max_PerPlatform: double (nullable = true)\n |-- _Max_PerPlatform: double (nullable = true)\n |-- _Avg_PerPlatform: double (nullable = true)\n |-- _Avg_PerPlatform: double (nullable = true)\n |-- _Avg_PerPlatform: double (nullable = true)\n |-- _Avg_PerPlatform: double (nullable = true)\n |-- _Avg_PerPlatform: double (nullable = true)\n |-- _Avg_PerPlatform: double (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646115827055_1346317236",
+      "id": "paragraph_1646115827055_1346317236",
+      "dateCreated": "2022-03-01T06:23:47+0000",
+      "dateStarted": "2022-03-01T06:29:59+0000",
+      "dateFinished": "2022-03-01T06:29:59+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:6007"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1646116199790_1830533093",
+      "id": "paragraph_1646116199790_1830533093",
+      "dateCreated": "2022-03-01T06:29:59+0000",
+      "status": "READY",
+      "$$hashKey": "object:6008"
+    }
+  ],
+  "name": "Using Map, Group By and Aggregation",
+  "id": "2GXW5HRKH",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Using Map, Group By and Aggregation"
+}
